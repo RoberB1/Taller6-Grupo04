@@ -23,7 +23,7 @@ public class Empleado {
     public double calcularSalario() {
         double salarioTotal = salarioBase;
         if(aplicaSalario()){
-            salarioTotal = salarioTotal + calcularSalarioHorasExtra(horasTrabajadas);
+            salarioTotal = salarioTotal + calcularSalarioHorasExtra(50);
         }
         return salarioTotal;
 
