@@ -14,7 +14,28 @@ public class Empleado {
         this.departamento = departamento;
     }
 
+    // para calcularSalario se puede aplicar extract method , replace Conditional with Polymorphism y Replace Nested conditional with guard clauses
+
     public double calcularSalario() {
+        double salarioTotal = salarioBase
+        if(aplicaSalario()){
+            salarioTotal = salarioTotal + calcularSalarioHorasExtra;
+        }
+
+    }
+
+    private double calcularSalarioHorasExtra(double extra){
+        if(horasTrabajadas > 40 ) return (horasTrabajadas - 40) * extra;
+        return 0;
+    }
+
+    private boolean aplicaSalario(){
+        if (salariobase <= 0) throw new IllegalArgumentException("El salario debe ser mayor o igual a 0");
+        if (horasTrabajadas < 0) throw new IllegalArgumentException("Las horas trabajadas deben ser mayor o igual a 0");
+        return true;
+    }
+
+  /*  public double calcularSalario() {
         double salarioTotal = salarioBase;
         if (salarioBase>0) {
             if (horasTrabajadas >= 0) {
@@ -39,7 +60,7 @@ public class Empleado {
                 break;
         }
         return salarioTotal;
-    }
+    }*/
 
     public String getNombre() {
         return nombre;
@@ -84,7 +105,7 @@ public class Empleado {
     // Más metodos
 
     //Pull up method refactoring tech porque habia codigo duplicado en las clases hijas con este metodo
-    
+
     public void imprimirDetalles() {
         System.out.println("Nombre: " + super.getNombre());
         System.out.println("Genero: " + super.getNombre());
