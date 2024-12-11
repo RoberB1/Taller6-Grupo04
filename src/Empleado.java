@@ -21,9 +21,9 @@ public class Empleado {
     //Extract Method refactoring porque posee mas de 10 lineas de codigo lo que lo convierte en un codigo mas dificil de leer
 
     public double calcularSalario() {
-        double salarioTotal = salarioBase
+        double salarioTotal = salarioBase;
         if(aplicaSalario()){
-            salarioTotal = salarioTotal + calcularSalarioHorasExtra;
+            salarioTotal = salarioTotal + calcularSalarioHorasExtra(50);
         }
 
     }
