@@ -29,43 +29,18 @@ public class Empleado {
 
     }
 
+    // se crep un metodo para calcular el salario por horas extra
     private double calcularSalarioHorasExtra(double extra){
         if(horasTrabajadas > 40 ) return (horasTrabajadas - 40) * extra;
         return 0;
     }
 
+    // se creo un metodo para verificar que fuera aplicable al pago del salario
     private boolean aplicaSalario(){
         if (salarioBase <= 0) throw new IllegalArgumentException("El salario debe ser mayor o igual a 0");
         if (horasTrabajadas < 0) throw new IllegalArgumentException("Las horas trabajadas deben ser mayor o igual a 0");
         return true;
     }
-
-  /*  public double calcularSalario() {
-        double salarioTotal = salarioBase;
-        if (salarioBase>0) {
-            if (horasTrabajadas >= 0) {
-                // Horas trabajadas normales = 40;
-                if (horasTrabajadas > 40) {
-                    salarioTotal += (horasTrabajadas - 40) * 50; // Pago de horas extra
-                }
-            }else {
-                throw new IllegalArgumentException("Las horas trabajadas deben ser mayor o igual a 0");
-            }
-        } else {
-            throw new IllegalArgumentException("El salario debe ser mayor o igual a 0");
-        }
-        switch (departamento) {
-            case "Sistemas":
-                salarioTotal += 20;
-                break;
-            case "Contabilidad":
-                salarioTotal += 10;
-                break;
-            default:
-                break;
-        }
-        return salarioTotal;
-    }*/
 
 
     public String getNombre() {
