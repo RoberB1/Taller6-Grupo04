@@ -82,4 +82,14 @@ public class Empleado {
     }
 
     // Más metodos
+
+    //Pull up method refactoring tech porque habia codigo duplicado en las clases hijas con este metodo
+    
+    public void imprimirDetalles() {
+        System.out.println("Nombre: " + super.getNombre());
+        System.out.println("Genero: " + super.getNombre());
+        System.out.println("Salario: " + super.getSalarioBase());
+        System.out.println("Horas trabajadas: " + super.getHorasTrabajadas());
+        System.out.println("Departamento: " + super.getDepartamento());
+    }
 }

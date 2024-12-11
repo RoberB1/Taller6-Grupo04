@@ -15,12 +15,10 @@ public class EmpleadoTemporario extends Empleado {
         this.genero = genero;
     }
 
+
+    // por el pull up method se modifico este codigo para que el codigo sea mas sencillo
     public void imprimirDetalles() {
-        System.out.println("Nombre: " + nombre);
-        System.out.println("Genero: " + super.getNombre());
-        System.out.println("Salario: " + salarioBase);
-        System.out.println("Horas trabajadas: " + horasTrabajadas);
-        System.out.println("Departamento: " + departamento);
+        super.imprimirDetalles();
         System.out.println("Meses de contrato: " + mesesContrato);
     }
 
