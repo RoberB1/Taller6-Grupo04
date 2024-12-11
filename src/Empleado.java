@@ -14,6 +14,7 @@ public class Empleado {
         this.departamento = departamento;
     }
 
+    //Extract Method refactoring porque posee mas de 10 lineas de codigo lo que lo convierte en un codigo mas dificil de leer
     public double calcularSalario() {
         double salarioTotal = salarioBase;
         if (salarioBase>0) {
@@ -40,6 +41,7 @@ public class Empleado {
         }
         return salarioTotal;
     }
+
 
     public String getNombre() {
         return nombre;
@@ -92,4 +94,5 @@ public class Empleado {
         System.out.println("Horas trabajadas: " + super.getHorasTrabajadas());
         System.out.println("Departamento: " + super.getDepartamento());
     }
+    
 }
