@@ -21,10 +21,11 @@ public class Empleado {
     //Extract Method refactoring porque posee mas de 10 lineas de codigo lo que lo convierte en un codigo mas dificil de leer
 
     public double calcularSalario() {
-        double salarioTotal = salarioBase
+        double salarioTotal = salarioBase;
         if(aplicaSalario()){
-            salarioTotal = salarioTotal + calcularSalarioHorasExtra;
+            salarioTotal = salarioTotal + calcularSalarioHorasExtra(horasTrabajadas);
         }
+        return salarioTotal;
 
     }
 
@@ -34,7 +35,7 @@ public class Empleado {
     }
 
     private boolean aplicaSalario(){
-        if (salariobase <= 0) throw new IllegalArgumentException("El salario debe ser mayor o igual a 0");
+        if (salarioBase <= 0) throw new IllegalArgumentException("El salario debe ser mayor o igual a 0");
         if (horasTrabajadas < 0) throw new IllegalArgumentException("Las horas trabajadas deben ser mayor o igual a 0");
         return true;
     }
@@ -112,11 +113,11 @@ public class Empleado {
     //Pull up method refactoring tech porque habia codigo duplicado en las clases hijas con este metodo
 
     public void imprimirDetalles() {
-        System.out.println("Nombre: " + super.getNombre());
-        System.out.println("Genero: " + super.getNombre());
-        System.out.println("Salario: " + super.getSalarioBase());
-        System.out.println("Horas trabajadas: " + super.getHorasTrabajadas());
-        System.out.println("Departamento: " + super.getDepartamento());
+        System.out.println("Nombre: " + getNombre());
+        System.out.println("Genero: " + getNombre());
+        System.out.println("Salario: " + getSalarioBase());
+        System.out.println("Horas trabajadas: " + getHorasTrabajadas());
+        System.out.println("Departamento: " + getDepartamento());
     }
     
 }
