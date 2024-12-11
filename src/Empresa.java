@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.*;
+import java.util.stream.Collectors;
+
 
 public class Empresa {
     private List<Empleado> empleados;
@@ -17,7 +18,7 @@ public class Empresa {
         empleados.remove(empleado);
     }
 
-    //Extract Method : Simplifica el codigo demas
+    //Extract Method
     public List<Empleado> obtenerEmpleadosPorHorasTrabajadasaPartirDe(int horas) {
         List<Empleado> empleadosPorTipo = new ArrayList<>();
 //        for (Empleado empleado : empleados) {
@@ -25,7 +26,8 @@ public class Empresa {
 //                empleadosPorTipo.add(empleado);
 //            }
 //        }
-        return Empleado.stream().filter(e -> e.getHorasTrabajadas() > horas).collect(Collectors.ToList());
+        //Uso de stream y collectors
+        return Empleado.stream().filter(e -> e.getHorasTrabajadas() > horas).collect(Collectors.toList());
     }
 
     // Más metodos
