@@ -14,7 +14,11 @@ public class Empleado {
         this.departamento = departamento;
     }
 
+
     // para calcularSalario se puede aplicar extract method , replace Conditional with Polymorphism y Replace Nested conditional with guard clauses
+
+
+    //Extract Method refactoring porque posee mas de 10 lineas de codigo lo que lo convierte en un codigo mas dificil de leer
 
     public double calcularSalario() {
         double salarioTotal = salarioBase
@@ -61,6 +65,7 @@ public class Empleado {
         }
         return salarioTotal;
     }*/
+
 
     public String getNombre() {
         return nombre;
@@ -113,4 +118,5 @@ public class Empleado {
         System.out.println("Horas trabajadas: " + super.getHorasTrabajadas());
         System.out.println("Departamento: " + super.getDepartamento());
     }
+    
 }
